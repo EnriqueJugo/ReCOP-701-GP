@@ -1,0 +1,8 @@
+db/
+incremental_db/
+output_files/
+.quartus/                       
+*.rpt 
+*.qws
+*.bak
+assembler/__pychace__/

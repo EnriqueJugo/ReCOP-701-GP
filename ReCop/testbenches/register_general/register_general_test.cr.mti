@@ -1,0 +1,17 @@
+{D:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/register_general/register_general_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/register_general/register_general_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register_general_tb
+-- Compiling architecture behavior of register_general_tb
+
+} {} {}} {D:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/register_general.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/register_general.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register_general
+-- Compiling architecture beh of register_general
+
+} {} {}}

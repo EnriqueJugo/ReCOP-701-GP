@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/mux_2
+Eregister_general
+Z0 w1745038590
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dD:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/register_general
+Z4 8D:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/register_general.vhd
+Z5 FD:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/register_general.vhd
+l0
+L4
+V:aI_R5>XQDE=5A3dhRR7h2
+!s100 K2:hMGU6A<`bU2SnCE8Qo1
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1745141684
+!i10b 1
+Z8 !s108 1745141684.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/register_general.vhd|
+Z10 !s107 D:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/register_general.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abeh
+R1
+R2
+DEx4 work 16 register_general 0 22 :aI_R5>XQDE=5A3dhRR7h2
+l17
+L15
+VSo[lz3hi3P@TA60C0J7BI0
+!s100 S8NN[zRPlXJZOm`BziV5l2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eregister_general_tb
+Z13 w1745141678
+R1
+R2
+R3
+Z14 8D:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/register_general/register_general_tb.vhd
+Z15 FD:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/register_general/register_general_tb.vhd
+l0
+L4
+V@<^LG10]UN3lHhah4D;Fb0
+!s100 D?A@Dg_MDWz=m[f^JAc:62
+R6
+32
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/register_general/register_general_tb.vhd|
+Z17 !s107 D:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/register_general/register_general_tb.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+Z18 DEx4 work 19 register_general_tb 0 22 @<^LG10]UN3lHhah4D;Fb0
+l31
+L7
+VY^P4Inm[`P6c4U^f<Hz[z2
+!s100 :jdcZ<bEFgf7jSlNBjWLg2
+R6
+32
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12

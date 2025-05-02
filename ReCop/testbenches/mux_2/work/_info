@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Applications
+Emux_2
+Z0 w1745038590
+Z1 DPx3 lpm 14 lpm_components 0 22 BZZBj]8LhndN7CkCjD@L`2
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dD:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/mux_2
+Z5 8D:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/mux_2.vhd
+Z6 FD:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/mux_2.vhd
+l0
+L42
+V3We2H[Z5O<G>@eJOVnnHE1
+!s100 :b:OA]IAD[X_okG7MY0Ge2
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1745140264
+!i10b 1
+Z9 !s108 1745140264.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/mux_2.vhd|
+Z11 !s107 D:/University/COMPSYS 701/GP1/701-GP/ReCop/vhd/mux_2.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Asyn
+R1
+R2
+R3
+DEx4 work 5 mux_2 0 22 3We2H[Z5O<G>@eJOVnnHE1
+l64
+L53
+V@0CjFIkUY3bP4EGDiJ_AM0
+!s100 9mig7L;S8`V?72J;B`g1k2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emux_2_tb
+Z14 w1745140260
+R2
+R3
+R4
+Z15 8D:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/mux_2/tb_mux_2.vhd
+Z16 FD:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/mux_2/tb_mux_2.vhd
+l0
+L4
+V`_M]AB7Z[^=mPhX=T4QRS1
+!s100 OH_hC7`VDBSP>[z;k;8OG3
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/mux_2/tb_mux_2.vhd|
+Z18 !s107 D:/University/COMPSYS 701/GP1/701-GP/ReCop/testbenches/mux_2/tb_mux_2.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+DEx4 work 8 mux_2_tb 0 22 `_M]AB7Z[^=mPhX=T4QRS1
+l24
+L7
+VPQbcO?Bi=GdZgAZ@6lYTH0
+!s100 iGJQ<z[WV@Sza9GW2ZHLc2
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13

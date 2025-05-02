@@ -86,7 +86,7 @@ Each instruction flows through FETCH1 -> FETCH2 → DECODE → EXECUTE → (MEM_
 
 ## How to Use
 
-1. **Run** the assembler on the assemlby code by going into *assembler* and running the Python script: *python assembler.py <filename>.asm*.
+1. **Run** the assembler on the assemlby code by going into *assembler* and running the Python script: *python assembler.py (filename).asm*.
 2. Make sure that the filename is **main.mif** inside the *assembler* folder
 3. **Synthesize** and **program** the design in Quartus Prime.
 4. To **update** the MIF file without resynthesis. Go to *Processing*→*Update Memory Initialization File* and **Run** the Quartus assembler.
@@ -98,5 +98,3 @@ Each instruction flows through FETCH1 -> FETCH2 → DECODE → EXECUTE → (MEM_
 - **Zero flag (Z_FLAG)**: Used for conditional instructions like `PRESENT` and `SZ`.
 
 ---
-=======
-# ReCOP-701-GP

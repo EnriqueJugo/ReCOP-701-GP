@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ReCOP
 ---
 
@@ -87,9 +86,10 @@ Each instruction flows through FETCH1 -> FETCH2 → DECODE → EXECUTE → (MEM_
 
 ## How to Use
 
-1. **Synthesize** and **program** the design in Quartus Prime.
-2. **Simulate** using ModelSim if needed — testbenches should stimulate instructions and monitor outputs.
-3. **Load** machine code into program memory (`prog_mem`) via a Memory Initialization File (`.mif`).
+1. **Run** the assembler on the assemlby code by going into *assembler* and running the Python script: *python assembler.py <filename>.asm*.
+2. Make sure that the filename is **main.mif** inside the *assembler* folder
+3. **Synthesize** and **program** the design in Quartus Prime.
+4. To **update** the MIF file without resynthesis. Go to *Processing*→*Update Memory Initialization File* and **Run** the Quartus assembler.
 
 ---
 
@@ -100,4 +100,3 @@ Each instruction flows through FETCH1 -> FETCH2 → DECODE → EXECUTE → (MEM_
 ---
 =======
 # ReCOP-701-GP
->>>>>>> origin/main

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ReCOP
 ---
 
@@ -97,3 +98,6 @@ Each instruction flows through FETCH1 -> FETCH2 → DECODE → EXECUTE → (MEM_
 - **Zero flag (Z_FLAG)**: Used for conditional instructions like `PRESENT` and `SZ`.
 
 ---
+=======
+# ReCOP-701-GP
+>>>>>>> origin/main

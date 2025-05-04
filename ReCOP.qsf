@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE 5CSEMA5F31C6
 set_global_assignment -name TOP_LEVEL_ENTITY ReCOP_bd
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:20:47  MARCH 31, 2025"
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -311,6 +311,8 @@ set_location_assignment PIN_D11 -to VGA_VS
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name MIF_FILE assembler/main.mif
+set_global_assignment -name VHDL_FILE ReCop/vhd/seven_seg_recop.vhd
 set_global_assignment -name MIF_FILE ReCop/mif/main.mif
 set_global_assignment -name MIF_FILE assembler/test_gpio.mif
 set_global_assignment -name VHDL_FILE ReCop/vhd/svop_register.vhd
@@ -345,49 +347,9 @@ set_global_assignment -name VHDL_FILE ReCop/vhd/instruction_register.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_global_assignment -name VHDL_FILE memory_address_register.vhd
 set_global_assignment -name VHDL_FILE dcpr.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform6.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform7.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform8.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform9.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform10.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform11.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform12.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform13.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform14.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform15.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform16.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform17.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform18.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform19.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform20.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform21.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform22.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform23.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform24.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform25.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform26.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform27.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform28.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform29.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform30.vwf
 set_global_assignment -name BDF_FILE ReCOP_bd.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform1.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/Waveform1.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/bdf_test.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform2.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform31.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform32.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform3.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform33.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform34.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform35.vwf
 set_global_assignment -name BDF_FILE SIP_SOP_TEST.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform36.vwf
 set_global_assignment -name SOURCE_FILE db/ReCOP.cmp.rdb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

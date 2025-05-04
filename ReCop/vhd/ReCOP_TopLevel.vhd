@@ -4,12 +4,12 @@ use ieee.numeric_std.all;
 
 entity ReCOP_TopLevel is
   port (
-    clk            : in std_logic;
-    reset          : in std_logic;
-    sip_input      : in std_logic_vector(15 downto 0);
-    sop_output     : out std_logic_vector(15 downto 0);
-    state_tb       : out std_logic_vector(5 downto 0);
-    z_flag_out     : out std_logic
+    clk        : in std_logic;
+    reset      : in std_logic;
+    sip_input  : in std_logic_vector(15 downto 0);
+    sop_output : out std_logic_vector(15 downto 0);
+    state_out  : out std_logic_vector(4 downto 0);
+    end_prog   : out std_logic
   );
 end entity;
 
@@ -100,7 +100,8 @@ begin
       eot_ld               => eot_ld,
       eot_clear            => eot_clear,
       rf_alu_er_sel        => rf_alu_er_sel,
-      state_out            => state_tb
+      state_out            => state_out,
+      end_prog             => end_prog
     );
 
   -- Instantiate the datapath
@@ -156,7 +157,5 @@ begin
       eot_clear            => eot_clear,
       alu_er_sel           => rf_alu_er_sel
     );
-
-  z_flag_out <= z_flag;
 
 end architecture;

@@ -73,7 +73,8 @@ entity control_unit is
     eot_ld    : out std_logic;
     eot_clear : out std_logic;
 
-    -- GOSH DARN IT
+    end_prog : out std_logic := '0';
+
     pc_reset    : out std_logic := '0';
     address_sel : out std_logic;
     z_flag      : in std_logic;
@@ -82,7 +83,7 @@ entity control_unit is
 
     pc_ld : out std_logic;
 
-    state_out : out std_logic_vector(5 downto 0)
+    state_out : out std_logic_vector(4 downto 0)
   );
 end entity control_unit;
 
@@ -117,44 +118,47 @@ architecture fsm of control_unit is
     EXEC_MAX,
     EXEC_STRPC,
     EXEC_SRES,
+    ENDPROG,
 
     MEM_ACCESS,
     WRITE_BACK
   );
 
-  function state_to_std6(state : state_type) return std_logic_vector is
+  -- 0 = FETCH1, 1 = FETCH2, 2 = DECODE, 3 = EXEC_ANY, 4 = MEM_ACCESS, 5 = WRITE BACK
+  function state_to_std5(state : state_type) return std_logic_vector is
   begin
     case state is
-      when INIT              => return "111111";
-      when FETCH1            => return "000000";
-      when FETCH2            => return "000001";
-      when DECODE            => return "000010";
-      when EXEC_LDR          => return "000011";
-      when EXEC_STR          => return "000100";
-      when EXEC_JMP          => return "000101";
-      when EXEC_PRESENT      => return "000110";
-      when EXEC_ANDR         => return "000111";
-      when EXEC_ORR          => return "001000";
-      when EXEC_ADDR         => return "001001";
-      when EXEC_SUBR         => return "001010";
-      when EXEC_SUBVR        => return "001011";
-      when EXEC_CLFZ         => return "001100";
-      when EXEC_CER          => return "001101";
-      when EXEC_CEOT         => return "001110";
-      when EXEC_SEOT         => return "001111";
-      when EXEC_NOOP         => return "010000";
-      when EXEC_SZ           => return "010001";
-      when EXEC_LER          => return "010010";
-      when EXEC_SSVOP        => return "010011";
-      when EXEC_SSOP         => return "010100";
-      when EXEC_LSIP         => return "010101";
-      when EXEC_DATACALL_REG => return "010110";
-      when EXEC_DATACALL_IMM => return "010111";
-      when EXEC_MAX          => return "011000";
-      when EXEC_STRPC        => return "011001";
-      when EXEC_SRES         => return "011010";
-      when MEM_ACCESS        => return "011011";
-      when WRITE_BACK        => return "011100";
+      when INIT              => return "11111";
+      when FETCH1            => return "00000";
+      when FETCH2            => return "00001";
+      when DECODE            => return "00010";
+      when EXEC_LDR          => return "00011";
+      when EXEC_STR          => return "00011";
+      when EXEC_JMP          => return "00011";
+      when EXEC_PRESENT      => return "00011";
+      when EXEC_ANDR         => return "00011";
+      when EXEC_ORR          => return "00011";
+      when EXEC_ADDR         => return "00011";
+      when EXEC_SUBR         => return "00011";
+      when EXEC_SUBVR        => return "00011";
+      when EXEC_CLFZ         => return "00011";
+      when EXEC_CER          => return "00011";
+      when EXEC_CEOT         => return "00011";
+      when EXEC_SEOT         => return "00011";
+      when EXEC_NOOP         => return "00011";
+      when EXEC_SZ           => return "00011";
+      when EXEC_LER          => return "00011";
+      when EXEC_SSVOP        => return "00011";
+      when EXEC_SSOP         => return "00011";
+      when EXEC_LSIP         => return "00011";
+      when EXEC_DATACALL_REG => return "00011";
+      when EXEC_DATACALL_IMM => return "00011";
+      when EXEC_MAX          => return "00011";
+      when EXEC_STRPC        => return "00011";
+      when EXEC_SRES         => return "00011";
+      when MEM_ACCESS        => return "00100";
+      when WRITE_BACK        => return "00101";
+      when ENDPROG           => return "11111";
     end case;
   end function;
 
@@ -185,6 +189,7 @@ architecture fsm of control_unit is
   constant OP_MAX          : std_logic_vector(5 downto 0) := "011110";
   constant OP_STRPC        : std_logic_vector(5 downto 0) := "011101";
   constant OP_SRES         : std_logic_vector(5 downto 0) := "101010";
+  constant OP_ENDPROG      : std_logic_vector(5 downto 0) := "100000";
 
 begin
   -- State register
@@ -197,7 +202,7 @@ begin
     end if;
   end process;
 
-  state_out <= state_to_std6(state);
+  state_out <= state_to_std5(state);
 
   -- FSM next-state and outputs
   process (state)
@@ -216,30 +221,30 @@ begin
     svop_reset    <= '0';
     pc_ld         <= '0';
     address_sel   <= '0';
-		
-	 if state = INIT then
-		-- default all controls off
-		 mar_sel     <= (others => '0');
-		 mar_ld      <= '0';
-		 mar_reset   <= '0';
-		 ir_reset    <= '0';
-		 ir_ld       <= '0';
-		 wr_data_sel <= "00";
-		 rf_reset    <= '0';
-		 rf_wr       <= '0';
-		 alu_rb_sel  <= (others => '0');
-		 address_sel <= '0';
-		 mem_read    <= '0';
-		 mem_write   <= '0';
-		 reset_alu   <= '0';
-		 alu_op      <= (others => '0');
-		 clr_z_flag  <= '0';
-		 pc_sel      <= (others => '0');
-		 next_state  <= FETCH1;
-		next_state <= FETCH1;
+
+    if state = INIT then
+      -- default all controls off
+      mar_sel     <= (others => '0');
+      mar_ld      <= '0';
+      mar_reset   <= '0';
+      ir_reset    <= '0';
+      ir_ld       <= '0';
+      wr_data_sel <= "00";
+      rf_reset    <= '0';
+      rf_wr       <= '0';
+      alu_rb_sel  <= (others => '0');
+      address_sel <= '0';
+      mem_read    <= '0';
+      mem_write   <= '0';
+      reset_alu   <= '0';
+      alu_op      <= (others => '0');
+      clr_z_flag  <= '0';
+      pc_sel      <= (others => '0');
+      end_prog    <= '0';
+      next_state  <= FETCH1;
     elsif state = FETCH1 then
       -- T0: MAR ← PC ; PC ← PC+1
-		pc_ld <= '1';
+      pc_ld      <= '1';
       mar_sel    <= "00"; -- PC
       pc_sel     <= "10"; -- PC+1
       mar_ld     <= '1';
@@ -259,7 +264,7 @@ begin
       next_state <= FETCH2;
 
     elsif state = FETCH2 then
-		pc_ld <= '0';
+      pc_ld <= '0';
       -- T1: IR ← ProgMem[MAR]
       mar_ld <= '0';
       -- mem_read   <= '1';
@@ -268,15 +273,19 @@ begin
 
     elsif state = DECODE then
       -- T2: decode opcode
-      if opcode = OP_LDR then
+      if opcode = OP_ENDPROG then
+        next_state <= ENDPROG;
+      elsif opcode = OP_LDR then
         case addressing_mode is
-          when addr_mode_immediate => -- Immediate
+          when addr_mode_immediate =>
             wr_data_sel <= "00";
+
           when addr_mode_direct => -- Direct
             mar_sel     <= "01";
             mar_ld      <= '1';
             mem_read    <= '1';
             wr_data_sel <= "01";
+
           when addr_mode_register => -- Register
             mar_sel     <= "00";
             mar_ld      <= '1';
@@ -623,6 +632,8 @@ begin
       rf_b_re    <= '0';
       clr_z_flag <= '1';
       next_state <= FETCH1;
+    elsif state = ENDPROG then
+      end_prog <= '1';
     else
       next_state <= FETCH1;
     end if;

@@ -10,7 +10,6 @@ architecture testbench of ReCOP_TopLevel_tb is
   signal clk        : std_logic                     := '0';
   signal reset      : std_logic                     := '0';
   signal sip_input  : std_logic_vector(15 downto 0) := "0101010110100101";
-  signal z_flag_out : std_logic;
   signal sop_output : std_logic_vector(15 downto 0);
 
 begin
@@ -22,8 +21,7 @@ begin
       clk        => clk,
       reset      => reset,
       sip_input  => sip_input,
-      sop_output => sop_output,
-      z_flag_out => z_flag_out
+      sop_output => sop_output
     );
 
   -- Clock generation (10ns period => 100MHz)

@@ -171,7 +171,7 @@ class ReCOPParser:
         lines = [header]
         
         if len(self.instructions) < depth:
-            lines.append(f"    [{len(self.instructions):03X}..{depth - 1:03X}] : 00000000;\n")
+            lines.append(f"    [{len(self.instructions):03X}..{depth - 1:03X}] : 20000000;\n")
 
         for addr, inst in enumerate(self.instructions):
             if isinstance(inst, str) and all(c in "01" for c in inst):

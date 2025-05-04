@@ -40,6 +40,7 @@ instruction_table = {
     "ler":        "110110",
     "ssvop":     "111011",
     "max":        "011110",
+    "endprog":     "100000",
 }
 
 addressing_modes = {
